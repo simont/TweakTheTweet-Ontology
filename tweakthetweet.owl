@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:tn="http://tweetneed.org/tweakthetweet.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://tweetneed.org/tweakthetweet.owl">
+  <owl:Ontology rdf:about=""/>
+  <rdfs:Class rdf:ID="trapped">
+    <rdfs:comment xml:lang="en">tagged things mention people that are trapped</rdfs:comment>
+    <rdfs:label xml:lang="en">trapped</rdfs:label>
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="tagged_thing"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="medical">
+    <rdfs:comment xml:lang="en">tagged things that contain a mention of something medical</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="volunteer">
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="imok">
+    <rdfs:subClassOf>
+      <rdfs:Class rdf:ID="personal"/>
+    </rdfs:subClassOf>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="offer">
+    <rdfs:comment xml:lang="en">tagged thing contains an offer of some thing or service</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="medicine">
+    <rdfs:comment xml:lang="en">tagged things mention medicine</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#medical"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="injured">
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+    <rdfs:label xml:lang="en">injured</rdfs:label>
+    <rdfs:comment xml:lang="en">tagged things mention people that are injured</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="information">
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+    <rdfs:comment xml:lang="en">tagged things contain information or extra details about the tagged thing</rdfs:comment>
+    <rdfs:label xml:lang="en">information</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="drugs">
+    <rdfs:subClassOf rdf:resource="#medical"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tagged thing mentions drugs</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="doctor">
+    <rdfs:subClassOf rdf:resource="#medical"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="#personal">
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+    <rdfs:comment xml:lang="en">tagged things which have some personal question or response</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="rescueme">
+    <rdfs:subClassOf rdf:resource="#personal"/>
+    <rdfs:label xml:lang="en">rescue me</rdfs:label>
+    <rdfs:comment xml:lang="en">tagged things contain a call for rescue</rdfs:comment>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="food">
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="source">
+    <rdfs:label xml:lang="en">source</rdfs:label>
+    <rdfs:comment xml:lang="en">tagged things contain an indication of the source of the information or message they contain</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="ruok">
+    <rdfs:subClassOf rdf:resource="#personal"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="transport">
+    <rdfs:label xml:lang="en">transport</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="contact">
+    <rdfs:label xml:lang="en">contact</rdfs:label>
+    <rdfs:comment xml:lang="en">tagged things contain some type of contact information</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="closed">
+    <rdfs:comment xml:lang="en">tagged things that mention something is closed</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >closed</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="water">
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="location">
+    <rdfs:label xml:lang="en">location</rdfs:label>
+    <rdfs:comment xml:lang="en">tagged things that contain location data</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="tweet"/>
+  <rdfs:Class rdf:ID="need">
+    <rdfs:comment xml:lang="en">tagged things that contain a need</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:ID="open">
+    <rdfs:subClassOf rdf:resource="#tagged_thing"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tagged things that mention something is open</rdfs:comment>
+  </rdfs:Class>
+  <owl:ObjectProperty rdf:ID="has_water">
+    <rdfs:label xml:lang="en">water</rdfs:label>
+    <rdfs:domain rdf:resource="#water"/>
+    <rdfs:comment xml:lang="en">tagged thing mentions water</rdfs:comment>
+    <tn:tag_term xml:lang="fr">eau</tn:tag_term>
+    <tn:tag_term xml:lang="en">h20</tn:tag_term>
+    <tn:tag_term xml:lang="en">water</tn:tag_term>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_location">
+    <rdfs:comment xml:lang="en">tagged thing mentions a location or place</rdfs:comment>
+    <rdfs:label xml:lang="en">location</rdfs:label>
+    <tn:tag_term xml:lang="fr">emplacement</tn:tag_term>
+    <tn:tag_term xml:lang="en">loc</tn:tag_term>
+    <tn:tag_term xml:lang="en">location</tn:tag_term>
+    <rdfs:domain rdf:resource="#location"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_source">
+    <rdfs:comment xml:lang="en">tagged thing has information about the source of the thing or contents of the thing</rdfs:comment>
+    <rdfs:domain rdf:resource="#source"/>
+    <rdfs:label xml:lang="en">source</rdfs:label>
+    <tn:tag_term xml:lang="en">src</tn:tag_term>
+    <tn:tag_term xml:lang="en">source</tn:tag_term>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_starving">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tagged thing mentions that someone is starving, implying the need food</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >starving</rdfs:label>
+    <tn:tag_term xml:lang="en">hungry</tn:tag_term>
+    <tn:tag_term xml:lang="en">starve</tn:tag_term>
+    <tn:tag_term xml:lang="en">starving</tn:tag_term>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdfs:Class rdf:about="#need"/>
+          <rdfs:Class rdf:about="#food"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_open">
+    <rdfs:label xml:lang="en">open</rdfs:label>
+    <tn:tag_term xml:lang="fr">ouvert</tn:tag_term>
+    <tn:tag_term xml:lang="en">open</tn:tag_term>
+    <rdfs:domain rdf:resource="#open"/>
+    <rdfs:comment xml:lang="en">tagged thing mentions some thing is open, eg a road, a store, an airport, etc.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_offer">
+    <tn:tag_term xml:lang="en">offer</tn:tag_term>
+    <tn:tag_term xml:lang="fr">offre</tn:tag_term>
+    <tn:tag_term xml:lang="en">offering</tn:tag_term>
+    <rdfs:label xml:lang="en">offer</rdfs:label>
+    <rdfs:domain rdf:resource="#offer"/>
+    <rdfs:comment xml:lang="en">tagged thing mentions an offer of services or goods</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_closed">
+    <rdfs:label xml:lang="en">closed</rdfs:label>
+    <rdfs:comment xml:lang="en">tagged thing mentions something is closed, eg a road, a store, an airport</rdfs:comment>
+    <rdfs:domain rdf:resource="#closed"/>
+    <tn:tag_term xml:lang="fr">ferme</tn:tag_term>
+    <tn:tag_term xml:lang="en">closed</tn:tag_term>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_imok">
+    <rdfs:domain rdf:resource="#imok"/>
+    <tn:tag_term xml:lang="fr">chuiok</tn:tag_term>
+    <tn:tag_term xml:lang="en">imok</tn:tag_term>
+    <rdfs:label xml:lang="en">i am ok</rdfs:label>
+    <rdfs:comment xml:lang="en">tagged thing mentions imok - I am OK</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_ruok">
+    <tn:tag_term xml:lang="fr">teok</tn:tag_term>
+    <tn:tag_term xml:lang="en">ruok</tn:tag_term>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tagged thing mentions ruok - are you OK?</rdfs:comment>
+    <rdfs:domain rdf:resource="#ruok"/>
+    <rdfs:label xml:lang="en">are you ok</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_rescue">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rescue</rdfs:label>
+    <tn:tag_term xml:lang="en">rescuemehaiti</tn:tag_term>
+    <tn:tag_term xml:lang="en">rescueme</tn:tag_term>
+    <rdfs:comment xml:lang="en">tagged thing mentions rescue or need for rescue</rdfs:comment>
+    <rdfs:domain rdf:resource="#rescueme"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_information">
+    <tn:tag_term xml:lang="en">information</tn:tag_term>
+    <tn:tag_term xml:lang="en">info</tn:tag_term>
+    <rdfs:domain rdf:resource="#information"/>
+    <rdfs:comment xml:lang="en">tagged thing mentions information or need for information</rdfs:comment>
+    <rdfs:label xml:lang="en">information</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_doctor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tagged thing mentions a doctor or similar medical person</rdfs:comment>
+    <rdfs:label xml:lang="en">doctor</rdfs:label>
+    <rdfs:domain rdf:resource="#doctor"/>
+    <tn:tag_term xml:lang="en">doctor</tn:tag_term>
+    <tn:tag_term xml:lang="en">docteur</tn:tag_term>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_transport">
+    <rdfs:domain rdf:resource="#transport"/>
+    <rdfs:comment xml:lang="en">tagged thing mentions transport</rdfs:comment>
+    <tn:tag_term xml:lang="en">transport</tn:tag_term>
+    <rdfs:label xml:lang="en">transport</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_need">
+    <rdfs:comment xml:lang="en">tagged thing mentions a need or requirement</rdfs:comment>
+    <tn:tag_term xml:lang="en">need</tn:tag_term>
+    <tn:tag_term xml:lang="fr">besoin</tn:tag_term>
+    <rdfs:domain rdf:resource="#need"/>
+    <rdfs:label xml:lang="en">need</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_status">
+    <rdfs:comment xml:lang="en">tagged thing has a status update or request</rdfs:comment>
+    <tn:tag_term xml:lang="en">status</tn:tag_term>
+    <rdfs:label xml:lang="en">status</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="tweet_id">
+    <rdfs:domain rdf:resource="#tweet"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_trapped">
+    <rdfs:label xml:lang="en">trapped</rdfs:label>
+    <tn:tag_term xml:lang="en">trapped</tn:tag_term>
+    <tn:tag_term xml:lang="fr">priseaupiege</tn:tag_term>
+    <rdfs:comment xml:lang="en">tagged thing mentions someone or something is trapped</rdfs:comment>
+    <rdfs:domain rdf:resource="#trapped"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_food">
+    <tn:tag_term xml:lang="fr">nouriture</tn:tag_term>
+    <tn:tag_term xml:lang="en">food</tn:tag_term>
+    <rdfs:comment xml:lang="en">tagged thing mentions food</rdfs:comment>
+    <rdfs:label xml:lang="en">food</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_injured">
+    <rdfs:domain rdf:resource="#injured"/>
+    <rdfs:comment xml:lang="en">tagged thing mentions someone is injured</rdfs:comment>
+    <tn:tag_term xml:lang="fr">blessure</tn:tag_term>
+    <tn:tag_term xml:lang="en">injured</tn:tag_term>
+    <rdfs:label xml:lang="en">injured</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="has_shelter">
+    <rdfs:comment xml:lang="en">tagged thing mentions shelter</rdfs:comment>
+    <tn:tag_term xml:lang="en">shelter</tn:tag_term>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="tag_term">
+    <rdfs:comment xml:lang="en">a piece of text that can be searched from in text in order to tag that text with a specific meaning</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.1, Build 536)  http://protege.stanford.edu -->
