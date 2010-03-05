@@ -41,8 +41,8 @@
     <skos:example xml:lang="en">#need food water meds milk for babies</skos:example>
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >tweet mentions milk, possibly in the context of milk for infants</skos:definition>
-    <skos:altLabel xml:lang="fr">lait</skos:altLabel>
     <skos:altLabel xml:lang="en">formula</skos:altLabel>
+    <skos:altLabel xml:lang="fr">lait</skos:altLabel>
     <rdfs:subClassOf>
       <owl:Class rdf:ID="food"/>
     </rdfs:subClassOf>
@@ -68,6 +68,7 @@
     >Fire</rdfs:label>
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >text refers to a fire</skos:definition>
+    <skos:altLabel xml:lang="es">fuego</skos:altLabel>
     <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >incendie</skos:altLabel>
     <rdfs:subClassOf>
@@ -92,6 +93,7 @@
     >#num 20 people</skos:example>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Number</rdfs:label>
+    <skos:altLabel xml:lang="es">nombre</skos:altLabel>
     <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >num</skos:altLabel>
   </owl:Class>
@@ -101,10 +103,11 @@
     <rdfs:subClassOf>
       <owl:Class rdf:about="#data_tags"/>
     </rdfs:subClassOf>
-    <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >image</skos:altLabel>
+    <skos:altLabel xml:lang="es">foto</skos:altLabel>
     <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >photograph</skos:altLabel>
+    <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >image</skos:altLabel>
   </owl:Class>
   <owl:Class rdf:ID="hashtags">
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -144,11 +147,12 @@
   <owl:Class rdf:ID="water">
     <rdfs:comment xml:lang="en">Tagged thing mentions water</rdfs:comment>
     <rdfs:label xml:lang="en">Water</rdfs:label>
-    <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >h2o</skos:altLabel>
+    <skos:altLabel xml:lang="es">agua</skos:altLabel>
+    <skos:altLabel xml:lang="fr">eau</skos:altLabel>
     <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >h20</skos:altLabel>
-    <skos:altLabel xml:lang="fr">eau</skos:altLabel>
+    <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >h2o</skos:altLabel>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#keywords"/>
     </rdfs:subClassOf>
@@ -178,8 +182,8 @@
     >Antibiotics</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="offer">
-    <skos:altLabel xml:lang="fr">offre</skos:altLabel>
     <skos:altLabel xml:lang="en">offering</skos:altLabel>
+    <skos:altLabel xml:lang="fr">offre</skos:altLabel>
     <rdfs:label xml:lang="en">Offer</rdfs:label>
     <skos:definition xml:lang="en">text uses the hash tag #offer indicating that the sender is offering some 
     items or service to assist in the crisis</skos:definition>
@@ -212,19 +216,21 @@
     <rdfs:subClassOf>
       <owl:Class rdf:ID="medical"/>
     </rdfs:subClassOf>
-    <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >medical supplies</skos:altLabel>
+    <skos:altLabel xml:lang="es">medico</skos:altLabel>
+    <skos:altLabel xml:lang="es">medicina</skos:altLabel>
+    <skos:altLabel xml:lang="fr">medecine</skos:altLabel>
     <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >meds</skos:altLabel>
-    <skos:altLabel xml:lang="fr">medecine</skos:altLabel>
+    <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >medical supplies</skos:altLabel>
     <rdfs:label xml:lang="en">Medicine</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="baby">
     <skos:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >#need food water meds milk for babies</skos:example>
-    <skos:altLabel xml:lang="en">infant</skos:altLabel>
-    <skos:altLabel xml:lang="fr">enfant</skos:altLabel>
     <skos:altLabel xml:lang="en">babies</skos:altLabel>
+    <skos:altLabel xml:lang="fr">enfant</skos:altLabel>
+    <skos:altLabel xml:lang="en">infant</skos:altLabel>
     <skos:definition xml:lang="en">Tweet mentions baby/babies or equivalent</skos:definition>
     <rdfs:subClassOf rdf:resource="#child"/>
     <rdfs:label xml:lang="en">Baby</rdfs:label>
@@ -232,6 +238,7 @@
   <owl:Class rdf:ID="information">
     <rdfs:subClassOf rdf:resource="#keywords"/>
     <rdfs:comment xml:lang="en">tagged things contain information or extra details about the tagged thing</rdfs:comment>
+    <skos:altLabel xml:lang="es">informacion</skos:altLabel>
     <rdfs:label xml:lang="en">Information</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="rescueme">
@@ -275,6 +282,7 @@
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >tagged thing contains the #contact tag or equivalent, indicating some type of contact information is present</skos:definition>
     <rdfs:comment xml:lang="en"></rdfs:comment>
+    <skos:altLabel xml:lang="es">contacto</skos:altLabel>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#data_tags"/>
     </rdfs:subClassOf>
@@ -307,25 +315,27 @@
     <rdfs:subClassOf rdf:resource="#keywords"/>
   </owl:Class>
   <owl:Class rdf:ID="location">
-    <skos:altLabel xml:lang="fr">emplacement</skos:altLabel>
-    <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >loc</skos:altLabel>
+    <skos:altLabel xml:lang="es">sitio</skos:altLabel>
     <rdfs:label xml:lang="en">Location</rdfs:label>
-    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >tagged things contain #loc tag indicating that the text contains some type of location data</skos:definition>
     <rdfs:comment xml:lang="en"></rdfs:comment>
     <skos:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >#loc 123 Main Street</skos:example>
+    <skos:altLabel xml:lang="fr">emplacement</skos:altLabel>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tagged things contain #loc tag indicating that the text contains some type of location data</skos:definition>
+    <skos:altLabel xml:lang="es">locacion</skos:altLabel>
     <rdfs:subClassOf>
       <owl:Class rdf:about="#data_tags"/>
     </rdfs:subClassOf>
+    <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >loc</skos:altLabel>
   </owl:Class>
   <owl:Class rdf:ID="man">
     <skos:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     ></skos:example>
     <rdfs:subClassOf rdf:resource="#person"/>
-    <skos:altLabel xml:lang="fr">homme</skos:altLabel>
     <skos:altLabel xml:lang="en">men</skos:altLabel>
+    <skos:altLabel xml:lang="fr">homme</skos:altLabel>
   </owl:Class>
   <owl:Class rdf:ID="shelter">
     <rdfs:subClassOf rdf:resource="#keywords"/>
@@ -345,6 +355,7 @@
   <owl:Class rdf:ID="volunteer">
     <rdfs:comment xml:lang="en">Tagged thing mentions volunteer(s)</rdfs:comment>
     <rdfs:subClassOf rdf:resource="#keywords"/>
+    <skos:altLabel xml:lang="es">voluntarios</skos:altLabel>
     <skos:altLabel xml:lang="fr">Volontaire</skos:altLabel>
     <rdfs:label xml:lang="en">Volunteer</rdfs:label>
   </owl:Class>
@@ -397,8 +408,8 @@
     <rdfs:label xml:lang="en">Rescue</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="tents">
-    <skos:altLabel xml:lang="fr">tentes</skos:altLabel>
     <skos:altLabel xml:lang="en">tent</skos:altLabel>
+    <skos:altLabel xml:lang="fr">tentes</skos:altLabel>
     <rdfs:subClassOf rdf:resource="#shelter"/>
     <rdfs:label xml:lang="en">Tents</rdfs:label>
   </owl:Class>
@@ -449,6 +460,14 @@
   <owl:Class rdf:ID="tagged_thing">
     <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >types of things that can be tagged, eg. Tweets, SMS messages, plain text, etc.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:ID="building_damage">
+    <skos:altLabel xml:lang="es">edificiocolapso</skos:altLabel>
+    <skos:definition xml:lang="en">used to indicate a report of a damaged building or structure</skos:definition>
+    <rdfs:label xml:lang="en">Building damage</rdfs:label>
+    <skos:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></skos:example>
+    <rdfs:subClassOf rdf:resource="#main_tags"/>
   </owl:Class>
   <owl:Class rdf:ID="imok">
     <skos:example xml:lang="en">#imok john smith</skos:example>
@@ -513,9 +532,16 @@
     <rdfs:comment xml:lang="en">tagged thing mentions some thing is open, eg a road, a store, an airport, etc.</rdfs:comment>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="has_closed">
-    <rdfs:label xml:lang="en">closed</rdfs:label>
+    <rdfs:label xml:lang="en">Closed</rdfs:label>
     <rdfs:comment xml:lang="en">tagged thing mentions something is closed, eg a road, a store, an airport</rdfs:comment>
     <rdfs:domain rdf:resource="#closed"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="has_person">
+    <skos:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></skos:example>
+    <skos:definition xml:lang="en">text mentions someone's name, used to capture imok, ruok, name and similar hash tag data</skos:definition>
+    <skos:altLabel xml:lang="fr">nom</skos:altLabel>
+    <rdfs:label xml:lang="en">name</rdfs:label>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="has_imok">
     <rdfs:domain rdf:resource="#imok"/>
@@ -558,6 +584,10 @@
     <rdfs:comment xml:lang="en">tagged thing mentions a nurse or similar medical person</rdfs:comment>
     <rdfs:label xml:lang="en">nurse</rdfs:label>
   </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="has_contact">
+    <rdfs:label xml:lang="en">contact</rdfs:label>
+    <skos:altLabel xml:lang="es">contacto</skos:altLabel>
+  </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="has_medicine">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >medicine</rdfs:label>
@@ -594,6 +624,7 @@
   <owl:DatatypeProperty rdf:about="#has_location">
     <rdfs:comment xml:lang="en">tagged thing mentions a location or place</rdfs:comment>
     <rdfs:label xml:lang="en">location</rdfs:label>
+    <skos:altLabel xml:lang="es">sitio</skos:altLabel>
     <rdfs:domain rdf:resource="#location"/>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="has_offer">
@@ -640,7 +671,17 @@
   <owl:DatatypeProperty rdf:ID="has_longitude">
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >Longitude</rdfs:label>
+    <skos:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></skos:example>
     <rdfs:subPropertyOf rdf:resource="#has_location"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="has_number">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Number</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tagged thing contains a number clause containing some sort of count of things</skos:definition>
+    <skos:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >#need food #num 20 people</skos:example>
   </owl:DatatypeProperty>
   <owl:DatatypeProperty rdf:ID="has_injured">
     <rdfs:domain rdf:resource="#injured"/>
